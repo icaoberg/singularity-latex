@@ -1,5 +1,6 @@
 # singularity-latex
 ![Release](https://img.shields.io/badge/release-prealpha-red.svg)
+[![Build Status](https://travis-ci.org/icaoberg/singularity-latex.svg?branch=master)](https://travis-ci.org/icaoberg/singularity-latex)
 [![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-latex.svg)](https://github.com/icaoberg/singularity-latex/issues)
 [![GitHub forks](https://img.shields.io/github/forks/icaoberg/singularity-latex.svg)](https://github.com/icaoberg/singularity-latex/network)
 [![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-latex.svg)](https://github.com/icaoberg/singularity-latex/stargazers)
