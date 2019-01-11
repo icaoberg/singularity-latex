@@ -1,11 +1,11 @@
 #!/bin/bash
 
-IMAGE=latex.simg
+IMAGE=ubuntu16.04-latex.simg
 DEFINITION=Singularity
 
 if [ -f $IMAGE ]; then
 	rm -fv $IMAGE
 fi
 
-singularity image.create -s 5000 $IMAGE
+singularity image.create -s 2000 $IMAGE
 sudo singularity build $IMAGE $DEFINITION

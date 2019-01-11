@@ -6,7 +6,6 @@
 [![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-latex.svg)](https://github.com/icaoberg/singularity-latex/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/quick-guide-gplv3.en.html)
 
-
 ## Singularity
 To create the Singularity container, run the command
 
@@ -26,4 +25,22 @@ Singularity ubuntu16.04-latex.img:~/singularity-latex> which latex
 
 Singularity ubuntu16.04-latex.img:~/singularity-latex> which pdftex
 /usr/bin/pdftex
+```
+
+### version
+
+```
+  singularity-latex git:(master) ✗ singularity run --app pdftex ubuntu16.04-latex.simg --version
+pdfTeX 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian)
+kpathsea version 6.2.1
+Copyright 2015 Peter Breitenlohner (eTeX)/Han The Thanh (pdfTeX).
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the pdfTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the pdfTeX source.
+Primary author of pdfTeX: Peter Breitenlohner (eTeX)/Han The Thanh (pdfTeX).
+Compiled with libpng 1.6.17; using libpng 1.6.17
+Compiled with zlib 1.2.8; using zlib 1.2.8
+Compiled with poppler version 0.41.0
 ```

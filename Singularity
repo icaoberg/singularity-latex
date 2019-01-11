@@ -10,7 +10,7 @@ IncludeCmd: yes
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y --no-install-recommends apt-utils
-    /usr/bin/apt-get install -yq texlive-full --no-install-recommends
+    /usr/bin/apt-get install -yq texlive-full texmaker --no-install-recommends
 
     # Make folders for CBD HPC cluster
     if [ ! -d /images ]; then mkdir /images; fi
@@ -83,3 +83,17 @@ IncludeCmd: yes
 
 %apprun etex
     etex "$@"
+
+################### TEXMAKER ####################
+%appenv texmaker
+    BEST_APP=/usr/bin/texmaker
+    export BEST_APP
+
+%apphelp texmaker
+    Fore more information about pdftex please visit
+ 
+    * http://www.xm1math.net/texmaker/
+
+%apprun texmaker
+    texmaker "$@"
+
