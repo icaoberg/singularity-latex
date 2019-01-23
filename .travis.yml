@@ -22,5 +22,5 @@ before_install:
 
 script:
   - bash ./script.sh
-  - du -h singularity-ubuntu16.04-latex.simg
-  - singularity exec singularity-ubuntu16.04-latex.simg echo SUCCESS
+  - du -h ubuntu16.04-latex.simg
+  - singularity exec ubuntu16.04-latex.simg echo SUCCESS
