@@ -31,7 +31,7 @@ Singularity ubuntu16.04-latex.img:~/singularity-latex> which pdftex
 ### version
 
 ```
-  singularity-latex git:(master) ✗ singularity run --app pdftex ubuntu16.04-latex.simg --version
+singularity-latex git:(master) ✗ singularity run --app pdftex ubuntu16.04-latex.simg --version
 pdfTeX 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian)
 kpathsea version 6.2.1
 Copyright 2015 Peter Breitenlohner (eTeX)/Han The Thanh (pdfTeX).
