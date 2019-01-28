@@ -1,4 +1,5 @@
 # singularity-latex
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/2231)
 ![Release](https://img.shields.io/badge/release-prealpha-red.svg)
 [![Build Status](https://travis-ci.org/icaoberg/singularity-latex.svg?branch=master)](https://travis-ci.org/icaoberg/singularity-latex)
 [![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-latex.svg)](https://github.com/icaoberg/singularity-latex/issues)
