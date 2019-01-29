@@ -7,7 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-latex.svg)](https://github.com/icaoberg/singularity-latex/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/quick-guide-gplv3.en.html)
 
-## Singularity
+## Create image locally
 To create the Singularity container, run the command
 
 ```
@@ -45,3 +45,17 @@ Compiled with libpng 1.6.17; using libpng 1.6.17
 Compiled with zlib 1.2.8; using zlib 1.2.8
 Compiled with poppler version 0.41.0
 ```
+
+## Pull image from Singularity Hub
+
+```
+ singularity pull shub://icaoberg/singularity-latex
+ singularity pull --name customname.img shub://icaoberg/singularity-latex
+ singularity pull --commit shub://icaoberg/singularity-latex
+ singularity pull --hash shub://icaoberg/singularity-latex
+```
+
+---
+[![CBD](http://www.cbd.cmu.edu/wp-content/uploads/2017/07/wordpress-default.png)](http://www.cbd.cmu.edu)
+
+Copyleft © 2018-2019 [icaoberg](http://www.andrew.cmu.edu/~icaoberg) at the [Computational Biology Department](http://www.cbd.cmu.edu) in [Carnegie Mellon University](http://www.cmu.edu)
