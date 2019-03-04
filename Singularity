@@ -12,7 +12,6 @@ IncludeCmd: yes
     /usr/bin/apt-get install -y --no-install-recommends apt-utils
     /usr/bin/apt-get install -yq texlive-full texmaker --no-install-recommends
 
-    # Make folders for CBD HPC cluster
     if [ ! -d /images ]; then mkdir /images; fi
     if [ ! -d /projects ]; then mkdir /containers; fi
     if [ ! -d /containers ]; then mkdir /containers; fi

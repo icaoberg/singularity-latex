@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE=ubuntu16.04-latex.simg
+IMAGE=singularity-latex.simg
 DEFINITION=Singularity
 
 if [ -f $IMAGE ]; then
