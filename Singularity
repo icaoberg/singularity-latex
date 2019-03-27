@@ -15,8 +15,8 @@ IncludeCmd: yes
     /usr/bin/apt-get install -yq lyx
 
     #texmacs
-    /usr/bin/apt-get install -yq wget
-    /bin/gunzip -c TeXmacs-1.99.9-C.tar.gz | tar xvf -
+    #/usr/bin/apt-get install -yq wget
+    #/bin/gunzip -c TeXmacs-1.99.9-C.tar.gz | tar xvf -
 
     if [ ! -d /images ]; then mkdir /images; fi
     if [ ! -d /projects ]; then mkdir /projects; fi
