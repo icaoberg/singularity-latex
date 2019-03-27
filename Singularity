@@ -7,10 +7,12 @@ IncludeCmd: yes
     exec /usr/bin/python "$@"
 
 %post
+    #runs apt-get install for the package, -y being auto-yes and -q being quiet
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y --no-install-recommends apt-utils
     /usr/bin/apt-get install -yq texlive-full texmaker --no-install-recommends
+    /usr/bin/apt-get install -yq lyx
 
     if [ ! -d /images ]; then mkdir /images; fi
     if [ ! -d /projects ]; then mkdir /projects; fi
@@ -24,7 +26,7 @@ IncludeCmd: yes
     export BEST_APP
 
 %apphelp pdftex
-    Fore more information about pdftex please visit
+    For more information about pdftex please visit
  
     * https://www.tug.org/applications/pdftex/
 
@@ -37,7 +39,7 @@ IncludeCmd: yes
     export BEST_APP
 
 %apphelp gs
-    Fore more information about pdftex please visit
+    For more information about pdftex please visit
 
     * https://www.ghostscript.com/ 
 
@@ -50,7 +52,7 @@ IncludeCmd: yes
     export BEST_APP
 
 %apphelp latex
-    Fore more information about pdftex please visit
+    For more information about pdftex please visit
  
     * https://www.latex-project.org/
 
@@ -63,7 +65,7 @@ IncludeCmd: yes
     export BEST_APP
 
 %apphelp pdflatex
-    Fore more information about pdftex please visit
+    For more information about pdftex please visit
  
     * https://www.tug.org/applications/pdftex/
 
@@ -76,7 +78,7 @@ IncludeCmd: yes
     export BEST_APP
 
 %apphelp etex
-    Fore more information about pdftex please visit
+    For more information about pdftex please visit
  
     * https://www.tug.org/applications/pdftex/
 
@@ -89,10 +91,22 @@ IncludeCmd: yes
     export BEST_APP
 
 %apphelp texmaker
-    Fore more information about pdftex please visit
+    For more information about pdftex please visit
  
     * http://www.xm1math.net/texmaker/
 
 %apprun texmaker
     texmaker "$@"
 
+################### LYX ####################
+%appenv lyx
+    BEST_APP=lyx
+    export BEST_APP
+    
+%apphelp lyx
+    For more information about lyx please visit
+    
+    * https://www.lyx.org
+    
+%apprun lyx
+    lyx "$@"
