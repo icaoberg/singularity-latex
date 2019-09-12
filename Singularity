@@ -3,6 +3,12 @@ From: ubuntu:16.04
 
 IncludeCmd: yes
 
+%labels
+  MAINTAINER icaoberg
+  EMAIL icaoberg@alumni.cmu.edu
+  WEBSITE http://linus.cbd.cs.cmu.edu
+  VERSION v1.0
+
 %runscript
     exec /usr/bin/python "$@"
 
@@ -12,17 +18,14 @@ IncludeCmd: yes
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y --no-install-recommends apt-utils
     /usr/bin/apt-get install -yq texlive-full texmaker --no-install-recommends
-    /usr/bin/apt-get install -yq lyx
-
-    #texmacs
-    #/usr/bin/apt-get install -yq wget
-    #/bin/gunzip -c TeXmacs-1.99.9-C.tar.gz | tar xvf -
+    /usr/bin/apt-get install -yq lyx texstudio
 
     if [ ! -d /images ]; then mkdir /images; fi
     if [ ! -d /projects ]; then mkdir /projects; fi
     if [ ! -d /containers ]; then mkdir /containers; fi
     if [ ! -d /share ]; then mkdir /share; fi
     if [ ! -d /scratch ]; then mkdir /scratch; fi
+    if [ ! -d /webservers/pfenningweb ]; then mkdir -p /webservers/pfenningweb; fi
 
 ################### PDFTEX ###################
 %appenv pdftex
@@ -108,20 +111,22 @@ IncludeCmd: yes
     export BEST_APP
     
 %apphelp lyx
-    For more information about lyx please visit
+    For more information about Lyx please visit
     
     * https://www.lyx.org
     
 %apprun lyx
     lyx "$@"
     
-#texmacs goes here
-#%appenv texmacs
-#BEST_APP=texmacs
-#export BEST_APP
+################### TEXSTUDIO #####################
+%appenv texstudio
+BEST_APP=texstudio
+export BEST_APP
 
-#%apphelp texmacs
-#help message here
-
-#%apprun texmacs
-#texmacs "$@"
+%apphelp texstudio
+    For more information about TexStudio please visit
+    
+    * https://www.texstudio.org/
+    
+%apprun texstudio
+texstudio "$@"
