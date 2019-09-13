@@ -22,4 +22,4 @@ before_install:
 
 script:
   - bash ./build.sh
-  - du -h ubuntu16.04-latex.simg
+  - du -h singularity-latex.simg
