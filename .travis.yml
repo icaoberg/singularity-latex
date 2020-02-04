@@ -1,24 +1,55 @@
-sudo: required
+os: linux
 
 # whitelist
 branches:
   only:
     - master
 
-env:
-  - VERSION=2.6.0
+language: go
+
+go:
+    - "1.13"
+
+python:
+    - "3.7"
+
+addons:
+  apt:
+    packages:
+      - flawfinder
+      - squashfs-tools
+      - uuid-dev
+      - libuuid1
+      - libffi-dev
+      - libssl-dev
+      - libssl1.0.0
+      - libarchive-dev
+      - libgpgme11-dev
+      - libseccomp-dev
+  homebrew:
+    packages:
+      - squashfs
+    update: true
+
+sudo: required
+#dist: trusty
+
+matrix:
+  include:
+    - python: "3.7"
+
+git:
+    submodules: false
 
 before_install:
- - sudo apt-get update
- - sudo apt-get install -y libarchive-dev
- - sudo apt-get install -y squashfs-tools
- - wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz
- - tar xvf singularity-$VERSION.tar.gz
- - cd singularity-$VERSION
- - ./configure --prefix=/usr/local
- - make
- - sudo make install
- - cd ..
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - sed -i 's/git@gist.github.com:/https:\/\/gist.github.com\//' .gitmodules
+  - git submodule update --init --recursive
+  - sudo chmod u+x .travis/*.sh
+  - /bin/bash .travis/setup.sh
+
+install:
+  - # override
 
 script:
   - bash ./build.sh
