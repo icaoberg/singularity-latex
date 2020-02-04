@@ -1,37 +1,22 @@
 Bootstrap: docker
-From: ubuntu:16.04
+From: debian:buster
 
 IncludeCmd: yes
 
 %labels
   MAINTAINER icaoberg
-  EMAIL icaoberg@alumni.cmu.edu
-  WEBSITE http://linus.cbd.cs.cmu.edu
+  EMAIL icaoberg@andrew.cmu.edu
+  WEBSITE http://www.andrew.cmu.edu/~icaoberg
   VERSION v1.0
 
-%runscript
-    exec /usr/bin/python "$@"
-
 %post
-    #runs apt-get install for the package, -y being auto-yes and -q being quiet
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y --no-install-recommends apt-utils
     /usr/bin/apt-get install -yq texlive-full texmaker --no-install-recommends
     /usr/bin/apt-get install -yq lyx texstudio
 
-    if [ ! -d /images ]; then mkdir /images; fi
-    if [ ! -d /projects ]; then mkdir /projects; fi
-    if [ ! -d /containers ]; then mkdir /containers; fi
-    if [ ! -d /share ]; then mkdir /share; fi
-    if [ ! -d /scratch ]; then mkdir /scratch; fi
-    if [ ! -d /webservers/pfenningweb ]; then mkdir -p /webservers/pfenningweb; fi
-
 ################### PDFTEX ###################
-%appenv pdftex
-    BEST_APP=pdftex
-    export BEST_APP
-
 %apphelp pdftex
     For more information about pdftex please visit
  
@@ -41,10 +26,6 @@ IncludeCmd: yes
     pdftex "$@"
 
 ################ GHOSTSCRIPT #################
-%appenv gs
-    BEST_APP=gs
-    export BEST_APP
-
 %apphelp gs
     For more information about pdftex please visit
 
@@ -54,10 +35,6 @@ IncludeCmd: yes
     gs "$@"
 
 ################### LATEX ####################
-%appenv latex
-    BEST_APP=latex
-    export BEST_APP
-
 %apphelp latex
     For more information about pdftex please visit
  
@@ -67,10 +44,6 @@ IncludeCmd: yes
     latex "$@"
 
 ################## PDFLATEX ##################
-%appenv pdflatex
-    BEST_APP=pdflatex
-    export BEST_APP
-
 %apphelp pdflatex
     For more information about pdftex please visit
  
@@ -80,10 +53,6 @@ IncludeCmd: yes
     pdflatex "$@"
 
 #################### ETEX #####################
-%appenv etex
-    BEST_APP=etex
-    export BEST_APP
-
 %apphelp etex
     For more information about pdftex please visit
  
@@ -93,10 +62,6 @@ IncludeCmd: yes
     etex "$@"
 
 ################### TEXMAKER ####################
-%appenv texmaker
-    BEST_APP=/usr/bin/texmaker
-    export BEST_APP
-
 %apphelp texmaker
     For more information about pdftex please visit
  
@@ -106,10 +71,6 @@ IncludeCmd: yes
     texmaker "$@"
 
 ################### LYX ####################
-%appenv lyx
-    BEST_APP=lyx
-    export BEST_APP
-    
 %apphelp lyx
     For more information about Lyx please visit
     
@@ -119,10 +80,6 @@ IncludeCmd: yes
     lyx "$@"
     
 ################### TEXSTUDIO #####################
-%appenv texstudio
-BEST_APP=texstudio
-export BEST_APP
-
 %apphelp texstudio
     For more information about TexStudio please visit
     
